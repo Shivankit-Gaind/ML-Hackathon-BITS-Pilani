@@ -3,6 +3,7 @@ This project involves unsupervised learning analysis on San Francisco Crime Rate
 1. K-Means Clustering
 2. Hierarchial Clustering
 3. DB Scan
+
 The results of the clustering are given as images (which are plots generated using matplotlib - a python library).
 
 Python Libraries used:

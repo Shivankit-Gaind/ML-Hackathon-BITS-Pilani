@@ -7,6 +7,7 @@ from matplotlib import style
 from matplotlib import cm
 from sklearn.cluster import KMeans
 style.use('ggplot')
+import pylab
 
 fields = ['DayOfWeek', 'X', 'Y']
 
@@ -72,7 +73,7 @@ plt.xlim(35, 55)
 plt.ylim(65, 85)
 
 #trialplot = ax.scatter(x1, y1, s = area)
-plt.scatter(x1, y1, s = 0.01)
+
 
 #df.plot()
 #ax.set_xlabel('X')
@@ -83,6 +84,9 @@ plt.scatter(x1, y1, s = 0.01)
 kmeans = KMeans(n_clusters = 10, random_state = 56)
 kmeans.fit(combined)
 print(kmeans.cluster_centers_)
+
+colors = [int(i % 23) for i in kmeans.labels_]
+plt.scatter(x1, y1, s = 0.01, c = colors)
 
 plt.figure(1)
 plt.show(kmeans)
